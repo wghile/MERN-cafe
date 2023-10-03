@@ -8,7 +8,7 @@ import Nav from './components/Nav'
 
 function App() {
   
-  const [user, setUser] = useState({})
+  const [user, setUser] = useState(null)
   
   return (
     <main className='App'>

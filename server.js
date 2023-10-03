@@ -1,3 +1,6 @@
+require('dotenv').config()
+require('./config/database')
+
 //Express App is running the "production" version of the React App -- the index.html file in build folder
     //to update use npm run build command
     //browse to localhost:3001 to check out how production code will run when deployed
