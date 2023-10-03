@@ -22,7 +22,8 @@ const app = express()
         app.use(express.static(path.join(__dirname, 'build')))
 
 //Routes
-
+    //Mount the Router
+        app.use('/api/users', require('./routes/api/users'))
 
 //Catch All Route --> The following "catch all" route (note the *) is necessary to return the index.html on all non-AJAX requests (if no APIs are hit)
     app.get('/*', function(req, res) {
