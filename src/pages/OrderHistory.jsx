@@ -1,4 +1,11 @@
-export default function OrderHistory({handleCheckToken}) {
+import * as userServices from '../utilities/users-service'
+
+export default function OrderHistory() {
+
+  const handleCheckToken = async () => {
+    userServices.checkToken()
+  }
+
   return (
     <div>
         <h1>Order History</h1>

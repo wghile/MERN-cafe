@@ -10,7 +10,7 @@ const path = require('path')
 const favicon = require('serve-favicon')
 const logger = require('morgan')
 const port = process.env.PORT || 3001;      // Configure to use port 3001 instead of 3000 during development to avoid collision with React's dev server (localhost:3000)
-
+const checkToken = require('./config/checkToken')
 const app = express()
 
 //Middleware
@@ -20,7 +20,9 @@ const app = express()
     // Configure both serve-favicon & static middleware to serve from the production 'build' folder
         app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')))
         app.use(express.static(path.join(__dirname, 'build')))
-
+    
+    app.use(require('./config/checkToken'))
+    
 //Routes
     //Mount the Router
         app.use('/api/users', require('./routes/api/users'))
